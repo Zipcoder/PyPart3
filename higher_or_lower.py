@@ -5,15 +5,17 @@ def user_value():
     return value
 
 def randomValue():
-    return randrange(10)
+    return randrange(1, 10)
 
 def isEqual():
-    a = randomValue()
-    print("Random # generated: " + str(a))
 
+    a = randomValue()
     b = user_value()
     b = int(b)
-    print(b)
+
+    print("Random # generated: " + str(a))
+
+    print("you guessed: " + str(b))
 
     if a == b:
         print('You guessed correctly!')
