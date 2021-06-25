@@ -1,21 +1,36 @@
-def greet(name):
-    '''takes name and greet user with given name'''
-    print ("Hola " + name)
-    
 
-def name_input():
+def name_input(lang):
     '''Promts user for input and returns string'''
-    x=input("What do you like people to call you?")
-    return x  
+    name = ""
+    if lang == "english":
+        name = input("what is you name")
+    elif lang == "spanish":
+        name = input("como te llamas")
+    else: 
+       name = input("come si chiama")
+    return name 
 
-lang = input("Morning what is your first language english, spanish or italian?:")
-while(lang != 'english') and (lang != 'spanish') and (lang != 'italian'):
-    lang = input("Morning what is you first language ")
+def get_language():
+    """asks user to choose one of three languages"""
+    a = input("whats you first language? english, spanish, or french?")
+    return a 
 
 
-    
+def greet_user(lang, name):
+    '''Takes in the language and greets the user in that language'''
+    if lang == "english":
+        print("hello", name)
+    elif lang == "spanish":
+        print("hola", name)
+    else: 
+       print("ciao", name)
 
 
-    
-z = name_input()
-greet(z)
+def main():
+    language = get_language()
+    name = name_input(language)
+    greet_user(language, name)
+
+
+if __name__ == "__main__":
+    main() 
